@@ -66,6 +66,11 @@ const Banner = () => {
       className="bannerbg relative"
     >
       <Container>
+        <div>
+          <marquee behavior="scroll" direction="left">
+            <h2 className="text-[20px] text-[#d92020a5]">Lorem Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia hic amet neque beatae sapiente, eum dolores rerum sed possimus vero? ipsum, dolor sit amet consectetur adipisicing elit. Eos, voluptatem. Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum, facilis.</h2>
+          </marquee>
+        </div>
         <Slider {...settings}>
           
           {/* SLIDE 1 */}

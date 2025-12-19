@@ -20,7 +20,7 @@ const Navbar = () => {
           {/* Logo */}
           <div>
             <a href="/" className="text-2xl font-bold">
-              <img className='w-25' src={logo} alt="" />
+              <img className='lg:w-25 sm:w-20 md:w-20 w-15' src={logo} alt="" />
             </a>
           </div>
 
@@ -30,7 +30,7 @@ const Navbar = () => {
               <li key={item.id}>
                 <a
                   href={item.url}
-                  className="text-gray-700 text-[25px] hover:text-blue-500"
+                  className="text-[#2f328c] text-[25px] hover:text-blue-500"
                 >
                   {item.title}
                 </a>
@@ -40,7 +40,7 @@ const Navbar = () => {
 
           {/* Desktop Button */}
           <div className="hidden md:block">
-            <button className="px-4 py-2 bg-blue-500 text-white rounded">
+            <button className="px-4 py-2 bg-[#76288e] text-white rounded">
               যোগাযোগ
             </button>
           </div>
@@ -80,7 +80,7 @@ const Navbar = () => {
                   </a>
                 </li>
               ))}
-              <button className="w-full px-4 py-2 bg-blue-500 text-white rounded">
+              <button className="w-full px-4 py-2 bg-[#76288e] text-white rounded">
                 যোগাযোগ
               </button>
             </ul>
