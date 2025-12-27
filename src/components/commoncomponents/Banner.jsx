@@ -14,7 +14,7 @@ import Container from "./Container";
 function SampleNextArrow({ onClick }) {
   return (
     <div
-      className="absolute right-2 md:-right-10 top-1/2 -translate-y-1/2 z-20 cursor-pointer"
+      className="absolute  right-2 md:-right-10 top-1/2 -translate-y-1/2 z-20 cursor-pointer"
       onClick={onClick}
     >
       <FaArrowCircleRight
@@ -28,7 +28,7 @@ function SampleNextArrow({ onClick }) {
 function SamplePrevArrow({ onClick }) {
   return (
     <div
-      className="absolute left-2 md:-left-10 top-1/2 -translate-y-1/2 z-20 cursor-pointer"
+      className="absolute text-[#76288e] left-2 md:-left-10 top-1/2 -translate-y-1/2 z-20 cursor-pointer"
       onClick={onClick}
     >
       <FaArrowCircleLeft
@@ -68,7 +68,7 @@ const Banner = () => {
       <Container>
         <div>
           <marquee behavior="scroll" direction="left">
-            <h2 className="text-[20px] text-[#d92020a5]">Lorem Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia hic amet neque beatae sapiente, eum dolores rerum sed possimus vero? ipsum, dolor sit amet consectetur adipisicing elit. Eos, voluptatem. Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum, facilis.</h2>
+            <h2 className="text-[20px] py-2 text-[#d92020a5]">হযরত শাহ্ আজম রহ. হিফজুল কোরআন দরগাহ্ মডেল মাদ্রাসা || স্থাপিতঃ ২০১৮ ইংরেজী ১৪৩৯-৪০ হিজরী। || Hazrat Shah Azam Rah: Hifzul Quran Dorgah Model Madrasah</h2>
           </marquee>
         </div>
         <Slider {...settings}>

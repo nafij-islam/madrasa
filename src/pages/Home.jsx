@@ -8,7 +8,7 @@ import Header from "./../components/commoncomponents/Header";
 const Home = () => {
   return (
     <>
-      <Banner />
+      {/* <Banner /> */}
       <About />
       <Location />
     </>
@@ -16,3 +16,5 @@ const Home = () => {
 };
 
 export default Home;
+
+
