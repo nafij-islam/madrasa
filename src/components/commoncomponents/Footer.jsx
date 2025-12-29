@@ -75,7 +75,7 @@ const Footer = () => {
 
           {/* Bottom Section */}
           <div className="text-center space-y-2">
-            <p className="text-[#d92020a5] text-xs sm:text-sm md:text-base font-semibold">
+            <p className="text-[#cb252592] text-xs sm:text-sm md:text-base font-semibold">
               কেন্দ্র কোড : ১৩০ | মাদ্রাসা কোড : ১১২৪৬
             </p>
             <p className="text-gray-600 text-xs sm:text-sm">

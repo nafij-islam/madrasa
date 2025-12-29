@@ -68,7 +68,7 @@ const Banner = () => {
       <Container>
         <div>
           <marquee behavior="scroll" direction="left">
-            <h2 className="text-[20px] py-2 text-[#d92020a5]">হযরত শাহ্ আজম রহ. হিফজুল কোরআন দরগাহ্ মডেল মাদ্রাসা || স্থাপিতঃ ২০১৮ ইংরেজী ১৪৩৯-৪০ হিজরী। || Hazrat Shah Azam Rah: Hifzul Quran Dorgah Model Madrasah</h2>
+            <h2 className="text-[20px] py-2 text-[#cb2929a5]">হযরত শাহ্ আজম রহ. হিফজুল কোরআন দরগাহ্ মডেল মাদ্রাসা || স্থাপিতঃ ২০১৮ ইংরেজী ১৪৩৯-৪০ হিজরী। || Hazrat Shah Azam Rah: Hifzul Quran Dorgah Model Madrasah</h2>
           </marquee>
         </div>
         <Slider {...settings}>
