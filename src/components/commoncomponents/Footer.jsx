@@ -1,69 +1,107 @@
 import React from "react";
-import { FaFacebook, FaYoutube, FaPhone, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
+import { FaFacebook, FaYoutube, FaPhone, FaEnvelope, FaMapMarkerAlt, FaChevronRight } from "react-icons/fa";
 
+// আলাদা কন্টেইনার কম্পোনেন্ট (যদি অলরেডি না থাকে)
 const Container = ({ children }) => {
-  return <div className="max-w-7xl mx-auto">{children}</div>;
+  return <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">{children}</div>;
 };
 
 const Footer = () => {
+  const currentYear = new Date().getFullYear();
+
+  const quickLinks = [
+    { name: "হোম", url: "/" },
+    { name: "আমাদের পরিচিতি", url: "/আমাদের-পরিচিতি" },
+    { name: "শিক্ষক ও প্রশাসন", url: "/শিক্ষক-ও-প্রশাসন" },
+    { name: "ভর্তি তথ্য", url: "/ভর্তি-তথ্য" },
+    { name: "দান ও সহযোগিতা", url: "/দান-ও-সহযোগিতা" },
+  ];
+
   return (
-    <footer className="bg-[#EBFFD8] ">
+    <footer className="bg-[#E8F5E9] border-t-1 border-[#1F7A4D]">
       <Container>
-        <div className="px-4 sm:px-6 lg:px-8 py-6 sm:py-8 lg:py-10">
+        <div className="pt-12 pb-8">
           
           {/* Main Footer Content */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mb-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
             
-            {/* About Section */}
-            <div className="text-center sm:text-left">
-              <h4 className="text-[#2f328c] text-base sm:text-lg font-semibold mb-2 sm:mb-3">
+            {/* 1. About Section */}
+            <div className="space-y-4 text-center md:text-left">
+              <h4 className="text-[#1F7A4D] text-xl font-bold border-b-2 border-[#F4C430] inline-block pb-1">
                 আমাদের সম্পর্কে
               </h4>
               <p className="text-gray-700 text-sm sm:text-base leading-relaxed">
-                হযরত শাহ্ আজম রহ. হিফজুল কোরআন দরগাহ্ মডেল মাদ্রাসা একটি ইসলামিক শিক্ষা প্রতিষ্ঠান যা ২০১৮ সালে প্রতিষ্ঠিত হয়েছে।
+                হযরত শাহ্ আজম রহ. হিফজুল কোরআন দরগাহ্ মডেল মাদ্রাসা একটি দ্বীনি শিক্ষা প্রতিষ্ঠান। ২০১৮ সাল থেকে আমরা মানসম্মত কুরআন ও আধুনিক শিক্ষা প্রদান করে আসছি।
               </p>
             </div>
 
-            {/* Contact Section */}
-            <div className="text-center sm:text-left">
-              <h4 className="text-[#2f328c] text-base sm:text-lg font-semibold mb-2 sm:mb-3">
+            {/* 2. Quick Links Section */}
+            <div className="space-y-4 text-center md:text-left">
+              <h4 className="text-[#1F7A4D] text-xl font-bold border-b-2 border-[#F4C430] inline-block pb-1">
+                প্রয়োজনীয় লিঙ্ক
+              </h4>
+              <ul className="space-y-2">
+                {quickLinks.map((link, index) => (
+                  <li key={index}>
+                    <a 
+                      href={link.url} 
+                      className="text-gray-700 hover:text-[#1F7A4D] flex items-center justify-center md:justify-start gap-2 transition-all group"
+                    >
+                      <FaChevronRight className="text-[10px] text-[#F4C430] group-hover:translate-x-1 transition-transform" />
+                      {link.name}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* 3. Contact Section */}
+            <div className="space-y-4 text-center md:text-left">
+              <h4 className="text-[#1F7A4D] text-xl font-bold border-b-2 border-[#F4C430] inline-block pb-1">
                 যোগাযোগ
               </h4>
-              <div className="space-y-2 text-gray-700 text-sm sm:text-base inline-block sm:block">
-                <div className="flex items-center gap-2 justify-center sm:justify-start">
-                  <FaPhone className="text-[#76288e] flex-shrink-0" />
+              <div className="space-y-3 text-gray-700 text-sm flex flex-col items-center md:items-start">
+                <div className="flex items-center gap-3">
+                  <div className="bg-white p-2 rounded-full shadow-sm">
+                    <FaPhone className="text-[#1F7A4D]" />
+                  </div>
                   <span>09617880099</span>
                 </div>
-                <div className="flex items-center gap-2 justify-center sm:justify-start">
-                  <FaEnvelope className="text-[#76288e] flex-shrink-0" />
+                <div className="flex items-center gap-3">
+                  <div className="bg-white p-2 rounded-full shadow-sm">
+                    <FaEnvelope className="text-[#1F7A4D]" />
+                  </div>
                   <span className="break-all">info@madrasah.edu.bd</span>
                 </div>
-                <div className="flex items-start gap-2 justify-center sm:justify-start">
-                  <FaMapMarkerAlt className="text-[#76288e] mt-1 flex-shrink-0" />
+                <div className="flex items-start gap-3 text-center md:text-left">
+                  <div className="bg-white p-2 rounded-full shadow-sm">
+                    <FaMapMarkerAlt className="text-[#1F7A4D]" />
+                  </div>
                   <span>ঢাকা, বাংলাদেশ</span>
                 </div>
               </div>
             </div>
 
-            {/* Social Media Section */}
-            <div className="text-center sm:text-left sm:col-span-2 lg:col-span-1">
-              <h4 className="text-[#2f328c] text-base sm:text-lg font-semibold mb-2 sm:mb-3">
+            {/* 4. Social Media Section */}
+            <div className="space-y-4 text-center md:text-left">
+              <h4 className="text-[#1F7A4D] text-xl font-bold border-b-2 border-[#F4C430] inline-block pb-1">
                 সোশ্যাল মিডিয়া
               </h4>
-              <div className="flex gap-4 justify-center sm:justify-start">
+              <p className="text-gray-700 text-sm">আমাদের সাথে যুক্ত থাকুন</p>
+              <div className="flex gap-4 justify-center md:justify-start">
                 <a 
                   href="#" 
-                  className="text-[#76288e] hover:text-[#2f328c] transition-colors transform hover:scale-110 duration-200"
+                  className="bg-[#1F7A4D] text-white p-3 rounded-full hover:bg-[#F4C430] hover:text-[#1F7A4D] transition-all transform hover:-translate-y-1 shadow-md"
                   aria-label="Facebook"
                 >
-                  <FaFacebook size={28} className="sm:w-7 sm:h-7" />
+                  <FaFacebook size={20} />
                 </a>
                 <a 
                   href="#" 
-                  className="text-[#76288e] hover:text-[#2f328c] transition-colors transform hover:scale-110 duration-200"
+                  className="bg-[#1F7A4D] text-white p-3 rounded-full hover:bg-[#F4C430] hover:text-[#1F7A4D] transition-all transform hover:-translate-y-1 shadow-md"
                   aria-label="YouTube"
                 >
-                  <FaYoutube size={28} className="sm:w-7 sm:h-7" />
+                  <FaYoutube size={20} />
                 </a>
               </div>
             </div>
@@ -71,19 +109,23 @@ const Footer = () => {
           </div>
 
           {/* Divider */}
-          <div className="border-t border-gray-300 my-4 sm:my-6"></div>
+          <div className="border-t border-[#C8E6C9] mt-10 mb-6"></div>
 
-          {/* Bottom Section */}
-          <div className="text-center space-y-2">
-            <p className="text-[#cb252592] text-xs sm:text-sm md:text-base font-semibold">
-              কেন্দ্র কোড : ১৩০ | মাদ্রাসা কোড : ১১২৪৬
-            </p>
-            <p className="text-gray-600 text-xs sm:text-sm">
-              অফিস সময় : সকাল ৮:০০ টা থেকে বিকাল ৫:০০ টা
-            </p>
-            <p className="text-gray-600 text-xs sm:text-sm leading-relaxed px-4">
-              © {new Date().getFullYear()} হযরত শাহ্ আজম রহ. হিফজুল কোরআন দরগাহ্ মডেল মাদ্রাসা। সর্বস্বত্ব সংরক্ষিত।
-            </p>
+          {/* Bottom Footer */}
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-center md:text-left">
+            <div className="space-y-1">
+              <p className="text-[#1F7A4D] font-bold text-sm sm:text-base">
+                কেন্দ্র কোড : ১৩০ | মাদ্রাসা কোড : ১১২৪৬
+              </p>
+              <p className="text-gray-500 text-[13px]">
+                অফিস সময় : সকাল ৮:০০ টা থেকে বিকাল ৫:০০ টা
+              </p>
+            </div>
+            
+            <div className="text-gray-600 text-[13px] leading-relaxed">
+              <p>© {currentYear} হযরত শাহ্ আজম রহ. হিফজুল কোরআন দরগাহ্ মডেল মাদ্রাসা।</p>
+              <p className="md:text-right font-medium">NAFIJ ISLAM</p>
+            </div>
           </div>
 
         </div>

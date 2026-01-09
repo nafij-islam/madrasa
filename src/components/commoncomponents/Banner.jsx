@@ -8,19 +8,16 @@ import bannerimgthree from "../../assets/bannerthrtree.jpeg";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
-import { FaArrowCircleRight, FaArrowCircleLeft } from "react-icons/fa";
+import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import Container from "./Container";
 
 function SampleNextArrow({ onClick }) {
   return (
     <div
-      className="absolute  right-2 md:-right-10 top-1/2 -translate-y-1/2 z-20 cursor-pointer"
+      className="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 z-20 cursor-pointer bg-[#1F7A4D]/80 hover:bg-[#1F7A4D] text-white p-3 md:p-4 rounded-full transition-all duration-300 shadow-xl hidden sm:block"
       onClick={onClick}
     >
-      <FaArrowCircleRight
-        size={40}
-        className="text-primary hover:text-deep_slate_blue duration-300"
-      />
+      <FaChevronRight size={24} />
     </div>
   );
 }
@@ -28,13 +25,10 @@ function SampleNextArrow({ onClick }) {
 function SamplePrevArrow({ onClick }) {
   return (
     <div
-      className="absolute text-[#76288e] left-2 md:-left-10 top-1/2 -translate-y-1/2 z-20 cursor-pointer"
+      className="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 z-20 cursor-pointer bg-[#1F7A4D]/80 hover:bg-[#1F7A4D] text-white p-3 md:p-4 rounded-full transition-all duration-300 shadow-xl hidden sm:block"
       onClick={onClick}
     >
-      <FaArrowCircleLeft
-        size={40}
-        className="text-primary hover:text-deep_slate_blue duration-300"
-      />
+      <FaChevronLeft size={24} />
     </div>
   );
 }
@@ -48,63 +42,84 @@ const Banner = () => {
   }, []);
 
   const settings = {
+    dots: true,
     infinite: true,
-    speed: 600,
+    speed: 1000,
     slidesToShow: 1,
     slidesToScroll: 1,
     nextArrow: <SampleNextArrow />,
     prevArrow: <SamplePrevArrow />,
     autoplay: true,
-    autoplaySpeed: 3500,
+    autoplaySpeed: 5000,
+    fade: true,
+    appendDots: (dots) => (
+      <div style={{ bottom: "30px" }}>
+        <ul className="m-0 custom-dots"> {dots} </ul>
+      </div>
+    ),
   };
 
   return (
-    <section
-      data-aos="fade-right"
-      data-aos-duration="1000"
-      data-aos-delay="200"
-      className="bannerbg relative"
-    >
+    <section className="bg-white pb-12">
       <Container>
-        <div>
-          <marquee behavior="scroll" direction="left">
-            <h2 className="text-[20px] py-2 text-[#cb2929a5]">হযরত শাহ্ আজম রহ. হিফজুল কোরআন দরগাহ্ মডেল মাদ্রাসা || স্থাপিতঃ ২০১৮ ইংরেজী ১৪৩৯-৪০ হিজরী। || Hazrat Shah Azam Rah: Hifzul Quran Dorgah Model Madrasah</h2>
+        {/* মারকিউ সেকশন */}
+        <div className="flex items-center bg-[#E8F5E9] border-l-8 border-[#1F7A4D] my-6 rounded-r-xl overflow-hidden shadow-md">
+          <div className="bg-[#1F7A4D] text-white px-6 py-3 font-bold text-base md:text-lg whitespace-nowrap">
+            ঘোষণা:
+          </div>
+          <marquee behavior="scroll" direction="left" className="py-2">
+            <span className="text-base md:text-xl font-semibold text-[#1F7A4D] px-4">
+              হযরত শাহ্ আজম রহ. হিফজুল কোরআন দরগাহ্ মডেল মাদ্রাসা || স্থাপিতঃ ২০১৮ ইংরেজী ১৪৩৯-৪০ হিজরী। || নূরানী, নাজেরা ও হিফজ বিভাগে ভর্তি চলছে...
+            </span>
           </marquee>
         </div>
-        <Slider {...settings}>
-          
-          {/* SLIDE 1 */}
-          <div className="overflow-hidden">
-            <div className="aspect-[16/9] w-full">
-              <img
-                src={bannerimg}
-                alt="Banner One"
-                className="w-full h-full object-cover"
-              />
-            </div>
-          </div>
 
-          {/* SLIDE 2 */}
-          <div className="overflow-hidden">
-            <div className="aspect-[16/9] w-full">
-              <img
-                src={bannerimgtwo}
-                alt="Banner Two"
-                className="w-full h-full object-cover"
-              />
+        {/* স্লাইডার সেকশন */}
+        <div 
+          data-aos="fade-up" 
+          className="relative rounded-3xl overflow-hidden shadow-2xl border-[6px] border-[#E8F5E9]"
+        >
+          <Slider {...settings}>
+            
+            {/* SLIDE 1 */}
+            <div className="relative">
+              {/* মোবাইল এর জন্য h-[300px] এবং বড় স্ক্রিনের জন্য h-[550px] বা aspect-[16/7] */}
+              <div className="h-[300px] sm:h-[450px] lg:h-[550px] w-full">
+                <img
+                  src={bannerimg}
+                  alt="Madrasah Banner"
+                  className="w-full h-full object-cover shadow-inner"
+                />
+              </div>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
             </div>
-          </div>
-            <div className="overflow-hidden">
-            <div className="aspect-[16/9] w-full">
-              <img
-                src={bannerimgthree}
-                alt="Banner Two"
-                className="w-full h-full object-cover"
-              />
-            </div>
-          </div>
 
-        </Slider>
+            {/* SLIDE 2 */}
+            <div className="relative">
+              <div className="h-[300px] sm:h-[450px] lg:h-[550px] w-full">
+                <img
+                  src={bannerimgtwo}
+                  alt="Madrasah Banner"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
+            </div>
+
+            {/* SLIDE 3 */}
+            <div className="relative">
+              <div className="h-[300px] sm:h-[450px] lg:h-[550px] w-full">
+                <img
+                  src={bannerimgthree}
+                  alt="Madrasah Banner"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
+            </div>
+
+          </Slider>
+        </div>
       </Container>
     </section>
   );
