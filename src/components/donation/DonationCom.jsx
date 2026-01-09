@@ -123,7 +123,7 @@ const DonationCom = () => {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div className="p-4 bg-pink-50 border border-pink-100 rounded-xl flex justify-between items-center group hover:border-pink-500 transition-colors">
                   <span className="font-bold text-pink-600">বিকাশ</span>
-                  <span className="font-mono font-bold text-gray-700 tracking-wider">017XX-XXXXXX</span>
+                  <span className="font-mono font-bold text-gray-700 tracking-wider">01725111833</span>
                 </div>
                 <div className="p-4 bg-orange-50 border border-orange-100 rounded-xl flex justify-between items-center group hover:border-orange-500 transition-colors">
                   <span className="font-bold text-orange-600">নগদ</span>

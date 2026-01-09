@@ -1,16 +1,17 @@
 import React from "react";
-import Navbar from "./../components/commoncomponents/Navbear";
-import Banner from "./../components/commoncomponents/Banner";
-import About from "./../components/home/About";
-import Location from "./../components/home/Location";
-import Header from "./../components/commoncomponents/Header";
+import About from './../components/home/About';
+import AboutTWo from './../components/home/AboutTwo';
+import Banner from './../components/commoncomponents/Banner';
+
+
 
 const Home = () => {
   return (
     <>
-      <Banner />
-      <About />
-      <Location />
+      <Banner/>
+      <About/>
+      {/* <AboutTWo/> */}
+      {/* <Location /> */}
     </>
   );
 };

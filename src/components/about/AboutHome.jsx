@@ -18,7 +18,7 @@ const AboutHome = () => {
   ];
 
   return (
-    <div className="bg-[#fcfcfc] overflow-hidden">
+    <div className="bg-[#fcfcfc] px-1 overflow-hidden">
       
       {/* ১. হেডার সেকশন (হোম পেজ স্টাইল) */}
       <section className="relative py-16 bg-[#1F7A4D]">

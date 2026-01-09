@@ -1,6 +1,7 @@
 import React from "react";
 import Container from "./../commoncomponents/Container";
 import dada from "../../assets/dada ajmi.jpeg";
+import { Link } from 'react-router-dom';
 
 const About = () => {
   return (
@@ -32,9 +33,11 @@ const About = () => {
               </div>
               
               <div className="pt-4 flex justify-center lg:justify-start">
-                <button className="bg-[#1F7A4D] text-white px-8 py-3 rounded-full font-bold hover:bg-[#F4C430] hover:text-[#1F7A4D] transition-all shadow-lg">
+               <Link to={'/biography'}>
+                   <button className="bg-[#1F7A4D] text-white px-8 py-3 rounded-full font-bold hover:bg-[#F4C430] hover:text-[#1F7A4D] transition-all shadow-lg">
                   বিস্তারিত জানুন
                 </button>
+               </Link>
               </div>
             </div>
           </div>

@@ -8,6 +8,8 @@ import Details from './pages/Details';
 import Depertman from './pages/Depertman';
 import Donation from './pages/Donation';
 import Gallery from './pages/Gallery';
+import Contact from './pages/Contact';
+import Biography from './pages/Biography';
 
 const App = () => {
   return (
@@ -21,6 +23,8 @@ const App = () => {
           <Route path="/শিক্ষক-ও-প্রশাসন" element={<Depertman />} />
           <Route path="/দান-ও-সহযোগিতা" element={<Donation />} />
           <Route path="/গ্যালারি" element={<Gallery />} />
+          <Route path="/যোগাযোগ" element={<Contact />} />
+          <Route path="/biography" element={<Biography />} />
           </Route>
         </Routes>
       </BrowserRouter>
