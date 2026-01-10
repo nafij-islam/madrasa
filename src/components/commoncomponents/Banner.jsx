@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import bannerimg from "../../assets/bannerone.jpeg";
+import bannerimg from "../../assets/banner.jpeg";
 import bannerimgtwo from "../../assets/bannertwo.jpeg";
 import bannerimgthree from "../../assets/bannerthrtree.jpeg";
 import AOS from "aos";
